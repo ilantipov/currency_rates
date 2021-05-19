@@ -23,12 +23,13 @@ class CurrencyConverter extends CurrencyBase
         if (!$currencyExchangeRatio) {
             return $this->updateExchangeRate();
         }
-        return $currencyExchangeRatio->value('ratio');
+        return $currencyExchangeRatio->ratio;
     }
 
 
     public function updateExchangeRate(): float
     {
+
         $newRatio = $this->currencyExchangeLoader->getCurrencyExchangeRate('USD');
         if (!empty($newRatio)) {
             $this->saveNewRatio($newRatio);
