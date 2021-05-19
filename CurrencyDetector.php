@@ -34,6 +34,6 @@ class CurrencyDetector extends CurrencyBase
         return false;
         $requestCountry = $_SERVER['GEOIP_COUNTRY_NAME'];
         //request()
-        return Str::lower($requestCountry) == "россия" || Str::lower($requestCountry) == "россия";
+        return Str::lower($requestCountry) == "россия" || Str::lower($requestCountry) == "russia";
     }
 }
